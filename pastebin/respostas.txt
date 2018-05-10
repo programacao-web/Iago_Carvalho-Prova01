@@ -1,0 +1,37 @@
+3-
+
+(a) A filosofia de desenvolvimento mobile first prevê que o desenvolvimento e planejamento de aplicações web seja feito inicialmente para dispositivos móveis. Essa filosofia de desenvolvimento utiliza a melhoria progressiva como princípio, determinando que a aplicação seja orientada ao conteúdo e usabilidade inicialmente e que as versões desktop serão melhoradas posteriormente de maneira progressiva. Um dos recursos usados no CSS para essa filosofia são as mídia queries, que permitem definir como o conteudo será apresentado no mobile a partir do tamanho da tela do dispositivo. O html deve ser feito orientado ao conteúdo, de modo que mesmo com problemas de conexão ou do browser do dispositivo, ainda será possível acessar o conteúdo da página
+
+(b) O footer é responsivo mas não é mobile first pois não se adapta para o tamanho das telas de dispositivos móveis de maneira apropriada. Uma maneira de solucionar esse problema seria a adição de media queries no CSS.
+
+4 -
+
+(a) O problema n+1 ocorre quando é necessário carregar um dado filho em relacionamentos 1:n, onde ocorre a necessidade de realizar uma query para os dados do "pai" e uma query para cada dado filho. Esse problema é comum as ORMs mas pode ser contornado com certos recursos e mecanicas para carregar  os dados dos objetos com o menor numero de queries possível, por exemplo, carregando dados que levariam 2 queries em 1 unica através de recursos de associação, como o select_related do django.
+
+(b) Para evitar o lazy_loading do django seria necessário utilizar o recurso select_related que ja carrega os dados do objeto filho em uma unica query através da associação.
+
+
+5 -
+
+class Person {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    is_adult(){
+        return this.age >= 18;
+    }
+}
+
+const pessoa1 = new Person("Joao", 21);
+const pessoa2 = new Person("Maria", 20);
+const pessoa3 = new Person("Zé", 8);
+
+pessoas = [pessoa1, pessoa2, pessoa3];
+
+var sum = 0;
+for( var i = 0; i < pessoas.length; i++ ){
+    sum += parseInt( pessoas[i], 10 );
+}
+
+var avg = sum/pessoas.length;
